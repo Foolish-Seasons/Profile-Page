@@ -11,8 +11,8 @@
 }
 
 /* ハンバーガーメニューのアイコンスタイル */
-.navbar .menu-icon {
-    display: inline-block;
+.menu-icon {
+    display: none;
     cursor: pointer;
     color: #fff;
     font-size: 24px;
@@ -20,43 +20,39 @@
 }
 
 /* ハンバーガーメニューのアイコンホバーアニメーション */
-.navbar .menu-icon:hover {
+.menu-icon:hover {
     transform: scale(1.1);
 }
 
 /* ナビゲーションメニューのスタイル */
-.navbar .menu-items {
-    display: none;
-    margin-top: 15px;
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* メニューアイテムのスタイル */
-.navbar .menu-items a {
+.menu-items a {
     display: block;
     color: #fff;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-right: 20px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 /* メニューアイテムのホバースタイル */
-.navbar .menu-items a:hover {
+.menu-items a:hover {
     color: #ffdde1;
-}
-
-/* メニュー表示時のスタイル */
-.navbar .menu-items.show {
-    display: block;
 }
 
 /* メディアクエリ（スマートフォン） */
 @media (max-width: 768px) {
-    .navbar .menu-icon {
+    .menu-icon {
     display: inline-block;
     }
 
-    .navbar .menu-items {
+    .menu-items {
     display: none;
     position: absolute;
     top: 70px;
@@ -64,24 +60,35 @@
     width: 100%;
     padding: 20px;
     background: linear-gradient(to right, #ff416c, #ff4b2b);
+    flex-direction: column;
     }
 
-    .navbar .menu-items a {
-    font-size: 16px;
+    .menu-items a {
+    margin-bottom: 10px;
+    margin-right: 0;
     }
 
-    .navbar .menu-items.show {
-    display: block;
+    .menu-items.show {
+    display: flex;
     }
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var menuIcon = document.querySelector(".menu-icon");
+    var menuItems = document.querySelector(".menu-items");
 
+    menuIcon.addEventListener("click", function() {
+    menuItems.classList.toggle("show");
+    });
+});
+</script>
 <div class="navbar">
-    <div class="menu-icon">&#9776;</div>
-    <div class="menu-items">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </div>
+<div class="menu-icon">&#9776;</div>
+<div class="menu-items">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
 </div>
