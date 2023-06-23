@@ -1,0 +1,87 @@
+<style>
+/* ナビゲーションバーのスタイル */
+.navbar {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 9999;
+}
+
+/* ハンバーガーメニューのアイコンスタイル */
+.navbar .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ハンバーガーメニューのアイコンホバーアニメーション */
+.navbar .menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* ナビゲーションメニューのスタイル */
+.navbar .menu-items {
+    display: none;
+    margin-top: 15px;
+}
+
+/* メニューアイテムのスタイル */
+.navbar .menu-items a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* メニューアイテムのホバースタイル */
+.navbar .menu-items a:hover {
+    color: #ffdde1;
+}
+
+/* メニュー表示時のスタイル */
+.navbar .menu-items.show {
+    display: block;
+}
+
+/* メディアクエリ（スマートフォン） */
+@media (max-width: 768px) {
+    .navbar .menu-icon {
+    display: inline-block;
+    }
+
+    .navbar .menu-items {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    }
+
+    .navbar .menu-items a {
+    font-size: 16px;
+    }
+
+    .navbar .menu-items.show {
+    display: block;
+    }
+}
+</style>
+
+<div class="navbar">
+    <div class="menu-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+</div>
